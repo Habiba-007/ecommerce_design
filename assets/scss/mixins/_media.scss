@@ -1,0 +1,62 @@
+/* 
+    Project: lawyer portfolio
+    User: MD Faridul Hoque
+    Github: https://github.com/${Habiba-007}
+    Date: 12 February 2024 
+    Time: 12:25:42 
+    Path: assets\scss\mixins\_media.scss
+    Task List: working on @media responsive
+*/
+ 
+ 
+
+ 
+/*extra small=responsive*/
+@mixin xs() {
+    @media (min-width: 0px) and (max-width: 575.9px) {
+            @content();
+    }
+}
+
+/*sm=small=responsive*/
+@mixin sm() {
+    @media (min-width: 576px) and (max-width: 767px) {
+            @content();
+    }
+}
+
+/*md-medium=responsive*/
+@mixin md() {
+    @media (min-width: 768px) and (max-width: 991px) {
+            @content();
+    }
+}
+
+/*lg=large=responsive*/
+@mixin lg() {
+    @media (min-width: 992px) and (max-width: 1199px) {
+            @content();
+    }
+}
+
+/*extralarge=xxl=responsive*/
+@mixin xl() {
+    @media (min-width: 1200px) and (max-width: 1399.9px) {
+            @content();
+    }
+}
+
+/*double xl=responsive*/
+@mixin xxl() {
+    @media (min-width:1400px) {
+            @content();
+    }
+}
+
+//custom media
+@mixin custom_media($min, $max){
+    @media (min-width: $min) and (max-width: $max) {
+        @content();
+    }
+}
+ 
