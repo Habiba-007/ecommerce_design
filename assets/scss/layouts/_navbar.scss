@@ -1,0 +1,86 @@
+nav  {
+    .nav_body {
+        // border: var(--border);
+        // margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 18px 0px;
+
+        .logo {
+            height: 65px;
+            // img{  }
+        }
+        // menu 
+        .menu {
+
+            // border: var(--border);
+            ul {
+                gap: 65px;
+                // border: var(--border);
+                display: flex;
+                flex-wrap: wrap;
+                height: 100%;
+                align-items: center;
+                text-transform: capitalize;
+
+                li {
+                    a {
+                        font-size: 18px;
+                        color: var(--black);
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            height: 2px;
+                            width: 0px;
+                            background: linear-gradient(147.38deg, rgba(12, 104, 244, 0.3) 60.98%, rgba(12, 104, 244, 0.7) 81.93%, rgba(12, 104, 244, 0.3) 99.45%);
+                            left: -10px;
+                            position: absolute;
+                            bottom: -10px;
+                            background-position: center center;
+                            transition-duration: 0.3s;
+                        }
+
+                        &:focus,
+                        &:hover {
+                            color: var(--primary);
+
+                            &::after {
+                                width: calc(100% + 20px);
+                                ;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // action menu  
+        .action_menu {
+            // border: var(--border);
+
+            ul {
+                // border: var(--border);
+                display: flex;
+                flex-wrap: wrap;
+                gap: 25px;
+                height: 100%;
+                align-items: center;
+
+                li {
+                    a {
+                        .svg_icon {
+                            transition-duration: 0.3s;
+                        }
+
+                        &:hover {
+                            .svg_icon {
+                                background-color: var(--primary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

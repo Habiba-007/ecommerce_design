@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -16,30 +16,44 @@
             <div class="container">
                 <div class="nav_body">
                     <div class="logo">
-                        <img src="./assets/images/logo/logo.png" alt="">
+                        <img src="./assets/images/logo/logo.png" alt="logo">
                     </div>
+                    <!-- its menu  -->
                     <div class="menu">
                         <ul>
                             <li><a href="#">home</a></li>
-                            <li><a href="#">products</a></li>
+                            <li>
+                                <a href="#"onclick="product_catagory_jumbo_menu.classList.toggle('active')">products</a>
+                            </li>
                             <li><a href="#">blog</a></li>
                             <li><a href="#">faq</a></li>
                             <li><a href="#">contact us</a></li>
                         </ul>
                     </div>
+                    <!-- its_action_menues like(search,cart,profile=icons) -->
                     <div class="action_menu">
                         <ul>
                             <li>
-                                <a href="#"><img src="./assets/images/icons/search.svg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="./assets/images/icons/cart.svg" alt=""></a>
+                                <a href="#">
+                                    <div class="svg_icon"
+                                        style="-webkit-mask-image: url('assets/images/icons/search.svg'); mask-image: url('assets/images/icons/search.svg')">
+                                    </div>
+                                </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <div class="svg_icon" style="-webkit-mask-image:url('assets/images/icnons/user.svg');
-                                mask-image:url('assets/images/icons/user.svg');">
+                                    <div class="svg_icon" 
+                                        style="-webkit-mask-image: url('assets/images/icons/cart.svg'); mask-image: url('assets/images/icons/cart.svg')">
                                     </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="svg_icon"
+                                        style="-webkit-mask-image: url('assets/images/icons/profile.svg'); mask-image: url('assets/images/icons/profile.svg')">
+                                    </div>
+                                    <!-- another_drop_down_menu(by user) -->
+                                   
                                 </a>
                             </li>
                         </ul>
@@ -48,6 +62,155 @@
             </div>
         </nav>
     </header>
+    <!-- section part 1  -->
+    <section id="product_catagory_jumbo_menu" class="">
+        <div class="container">
+            <div class="product_list_menu">
+                <div class="backgroundcolor_or_overlay">
+                    <div class="product_catagories">
+                        <!-- devide-part-1  -->
+                        <div class="catagory_list">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Mobile phones</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Laptops & Computers</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Tablets & E-reader</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Wearables</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Audio</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Cameras</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Gaming</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Networking</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="svg_icon"
+                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                        </div>
+                                        <div class="text">Accessories</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- devide-part-2  -->
+                        <div class="subcatagory_list">
+                            <div class="subcatagory">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="svg_icon"
+                                                style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
+                                            </div>
+                                            <div class="text">Smart Phones</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="svg_icon"
+                                                style="-webkit-mask-image: url('assets/images/icons/accessories.svg'); mask-image: url('assets/images/icons/accessories.svg')">
+                                            </div>
+                                            <div class="text">Accessories</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="viewall">
+                                            View All
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- top-products-and top-products-item -->
+                            <div class="top_products">
+                                <div class="close_btn">
+                                    <a href="#"onclick="product_catagory_jumbo_menu.classList.toggle('active')">Close</a>
+                                </div>
+                                <!-- top_products_items  -->
+                                <div class="top_product_items">
+                                    <div class="product_image">
+                                        <img src="./assets/images/products/img_1.png" alt="product_img">
+                                        <a href="#">
+                                            <h4>Watch & Earpods</h4>
+                                        </a>
+                                    </div>
+                                    <div class="product_image">
+                                        <img src="./assets/images/products/img_2.png" alt="product_img">
+                                        <a href="#">
+                                            <h4>Holders</h4>
+                                        </a>
+                                    </div>
+                                    <div class="product_image">
+                                        <img src="./assets/images/products/img_3.png" alt="product_img">
+                                        <a href="#">
+                                            <h4>Power Cables</h4>
+                                        </a>
+                                    </div>
+                                    <div class="product_image">
+                                        <img src="./assets/images/products/img_4.png" alt="product_img">
+                                        <a href="#">
+                                            <h4>Cases & Protection</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

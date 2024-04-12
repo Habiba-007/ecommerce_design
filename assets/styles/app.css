@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "inter-regular";
+  src: url("../fonts/inter/inter-Regular.ttf");
+}
 :root {
   --border:1px solid red;
   --primary: #0C68F4;
@@ -11,12 +15,8 @@
   --white:#FFF;
   --testimonial_bg:#F4FBFF;
   --call_btn_color: #0F6E8C;
-  --app_font:"poppins-regular";
-  --poppin_regular:"poppins-regulaar";
-  --poppin_bold:"poppins-bold";
-  --poppin_semibold:"poppins-semibold";
-  --poppin_extrabold:"poppins-extrabold";
-  --play_fair:"Playfair Display", serif;
+  --app_font:"inter-regular";
+  --inter:"inter-regular";
 }
 
 .svg_icon {
@@ -54,7 +54,8 @@ html {
 }
 
 img,
-label, a,
+label,
+a,
 i,
 span {
   display: inline-block;
@@ -159,6 +160,174 @@ h3 {
   .container {
     width: 1370px;
   }
+}
+
+nav .nav_body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 18px 0px;
+}
+nav .nav_body .logo {
+  height: 65px;
+}
+nav .nav_body .menu ul {
+  gap: 65px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: center;
+  text-transform: capitalize;
+}
+nav .nav_body .menu ul li a {
+  font-size: 18px;
+  color: var(--black);
+  position: relative;
+}
+nav .nav_body .menu ul li a::after {
+  content: "";
+  height: 2px;
+  width: 0px;
+  background: linear-gradient(147.38deg, rgba(12, 104, 244, 0.3) 60.98%, rgba(12, 104, 244, 0.7) 81.93%, rgba(12, 104, 244, 0.3) 99.45%);
+  left: -10px;
+  position: absolute;
+  bottom: -10px;
+  background-position: center center;
+  transition-duration: 0.3s;
+}
+nav .nav_body .menu ul li a:focus, nav .nav_body .menu ul li a:hover {
+  color: var(--primary);
+}
+nav .nav_body .menu ul li a:focus::after, nav .nav_body .menu ul li a:hover::after {
+  width: calc(100% + 20px);
+}
+nav .nav_body .action_menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  height: 100%;
+  align-items: center;
+}
+nav .nav_body .action_menu ul li a .svg_icon {
+  transition-duration: 0.3s;
+}
+nav .nav_body .action_menu ul li a:hover .svg_icon {
+  background-color: var(--primary);
+}
+
+#product_catagory_jumbo_menu {
+  background-color: rgba(0, 0, 0, 0.28);
+  height: calc(100vh - 103px);
+  opacity: 0;
+  transition-duration: 0.3s;
+  visibility: hidden;
+  top: 103px;
+}
+#product_catagory_jumbo_menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+#product_catagory_jumbo_menu .product_list_menu {
+  border-top: 1px solid var(--primary);
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay {
+  background-color: var(--white);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories {
+  display: flex;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .catagory_list {
+  padding: 24px 16px;
+  border-right: 1px solid #9E9E9E;
+  width: 290px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .catagory_list ul li {
+  margin-bottom: 16px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .catagory_list ul li a {
+  display: flex;
+  gap: 16px;
+  color: var(--black);
+  align-items: center;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .catagory_list ul li a .svg_icon {
+  height: 24px;
+  width: 24px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .catagory_list ul li a .text {
+  font-size: 18px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .catagory_list ul li a:hover {
+  color: var(--primary);
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .subcatagory {
+  width: 230px;
+  padding: 26px 16px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .subcatagory ul li {
+  margin-bottom: 16px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .subcatagory ul li a {
+  display: flex;
+  gap: 16px;
+  color: var(--black);
+  align-items: center;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .subcatagory ul li a .svg_icon {
+  height: 24px;
+  width: 24px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .subcatagory ul li a .text {
+  font-size: 18px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .subcatagory ul li a:hover {
+  color: var(--primary);
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .subcatagory ul li .viewall {
+  font-size: 16px;
+  color: var(--primary);
+  align-items: center;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .top_products {
+  flex: 1;
+  margin-top: 80px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .top_products .close_btn {
+  text-align: right;
+  margin-right: 50px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .top_products .close_btn a {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .top_products .top_product_items {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding: 24px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .top_products .top_product_items .product_image {
+  width: 155px;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.182);
+  text-align: center;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .top_products .top_product_items .product_image img {
+  margin-bottom: 16px;
+}
+#product_catagory_jumbo_menu .product_list_menu .backgroundcolor_or_overlay .product_catagories .subcatagory_list .top_products .top_product_items .product_image a h4 {
+  font-size: 16px;
+  color: var(--black);
 }
 
 /*# sourceMappingURL=app.css.map */
