@@ -1,4 +1,4 @@
-nav  {
+nav {
     .nav_body {
         // border: var(--border);
         // margin-top: 20px;
@@ -11,6 +11,7 @@ nav  {
             height: 65px;
             // img{  }
         }
+
         // menu 
         .menu {
 
@@ -25,6 +26,7 @@ nav  {
                 text-transform: capitalize;
 
                 li {
+
                     a {
                         font-size: 18px;
                         color: var(--black);
@@ -55,6 +57,7 @@ nav  {
                 }
             }
         }
+
         // action menu  
         .action_menu {
             // border: var(--border);
@@ -68,6 +71,9 @@ nav  {
                 align-items: center;
 
                 li {
+                    // note:this postion-relative coming from (profile-action-menus)-wiht-position-absolute 
+                    position: relative;
+
                     a {
                         .svg_icon {
                             transition-duration: 0.3s;
@@ -77,6 +83,12 @@ nav  {
                             .svg_icon {
                                 background-color: var(--primary);
                             }
+                        }
+                    }
+
+                    &:has(.active) {
+                        >a .svg_icon {
+                            background-color: var(--primary);
                         }
                     }
                 }
