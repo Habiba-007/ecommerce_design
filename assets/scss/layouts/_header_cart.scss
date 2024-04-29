@@ -2,7 +2,7 @@
     position: absolute;
     right: 0;
     top: calc(100% + 40px);
-    width: 512px;
+    width: 500px;
     max-height: 700px;
     background-color: white;
     border-bottom-left-radius: 5px;
@@ -37,7 +37,7 @@
                 align-items: center;
 
                 .img {
-                     width: 154px;
+                     width: 160px;
                 }
 
                 .content {
@@ -83,7 +83,7 @@
                     .qty_changer{
                         display: flex;
                         justify-content: space-between;
-                        gap: 30px;
+                        gap: 33px;
                         align-items: center;
                         .price{
                             font-weight: 300;
@@ -93,7 +93,7 @@
                         }
                         .qty_updater{
                             display: flex;
-                            gap: 10px;
+                            gap: 1px;
                             button{
                                 background-color: transparent;
                                 border: 0;
