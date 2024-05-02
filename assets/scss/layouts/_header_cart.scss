@@ -7,12 +7,18 @@
     background-color: white;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    box-shadow: 0px 10px 10px -7px rgba(92, 88, 88, 0.817);
+    box-shadow: 0px 10px 10px -7px rgba(63, 60, 60, 0.884);
     padding: 16px;
     border-top: 1px solid rgba(79, 79, 217, 0.353);
+//  onclick=system 
+    display: none;
+    &.active{
+        display: block;
+    }
 
     // top-section
     .top {
+        padding-bottom: 10px;
         .cart_top_title {
             font-size: 18px;
             font-weight: 300;
@@ -22,49 +28,60 @@
 
     // mid-section 
     .mid {
-        padding: 8px;
+     
 
         .cart_item_list {
+            height: calc(700px - 252px);
+            overflow-y: scroll;
+            padding: 5px;
 
             .single_cart_item {
                 display: flex;
                 gap: 26px;
                 border-radius: 8px;
-                padding: 16px 32px;
+                padding: 10px;
                 background: #FFFFFF;
-                box-shadow: -2px 2px 15px -1px #71717133;
+                box-shadow: -2px 2px 15px -1px #7171714f;
                 margin-bottom: 12px;
                 align-items: center;
 
                 .img {
-                     width: 160px;
+                    max-width: 160px;
+                    align-items: center;
                 }
 
+                // content section part  
                 .content {
-                     
-                    .product_name, .size{
-                        font-size: 16px;
+                    width: 232px;
+
+                    // padding: 10px;
+                    .product_name,
+                    .size {
+                        font-size: 15px;
                         font-weight: bold;
                         line-height: 20px;
                     }
-                    .color{
+
+                    .color {
                         font-weight: 500;
                         font-size: 10px;
                         line-height: 12px;
                         margin-top: 10px;
                     }
-                    .qty{
+
+                    .qty {
                         font-weight: 500;
                         font-size: 10px;
                         line-height: 12px;
                     }
 
-                    .extra_features{
-                        
-                        ul{
+                    .extra_features {
+
+                        ul {
                             display: block;
                             margin-top: 10px;
-                            li{
+
+                            li {
                                 display: flex;
                                 font-size: 12px;
                                 line-height: 12px;
@@ -72,49 +89,55 @@
                                 margin-bottom: 10px;
                                 gap: 5px;
                             }
-                            .svg_icon{
+
+                            .svg_icon {
                                 width: 15px;
                                 height: 15px;
-                               background-color:  var(--primary);
+                                background-color: var(--primary);
                             }
                         }
                     }
 
-                    .qty_changer{
+                    .qty_changer {
                         display: flex;
                         justify-content: space-between;
                         gap: 33px;
                         align-items: center;
-                        .price{
+
+                        .price {
                             font-weight: 300;
                             font-size: 14px;
                             line-height: 15px;
-                        //    display: flex;
+                            display: flex;
                         }
-                        .qty_updater{
+
+                        .qty_updater {
                             display: flex;
                             gap: 1px;
-                            button{
+
+                            button {
                                 background-color: transparent;
                                 border: 0;
                                 outline: 0;
                                 cursor: pointer;
                             }
-                            .delete_btn{
-                               .svg_icon{
-                                background-color: var(--delete_error);
-                               }
+
+                            .delete_btn {
+                                .svg_icon {
+                                    background-color: var(--delete_error);
+                                }
                             }
 
-                            .qty_input{
+                            .qty_input {
                                 display: flex;
-                                gap: 10px;
-                                border-bottom: 1px solid rgba(0, 0, 0, 0.225);
-                                input{
+                                gap: 8px;
+                                border-bottom: 2px solid rgba(0, 0, 0, 0.225);
+
+                                input {
                                     width: 46px;
                                     border: 0;
                                     text-align: center;
-                                     
+
                                 }
                             }
                         }
@@ -129,7 +152,7 @@
         display: flex;
         gap: 32px;
         align-items: center;
-
+        padding-top: 10px;
         .left {
             .title {
                 font-size: 14px;
@@ -148,7 +171,7 @@
 
         .right {
             flex: 1;
-
+        //    padding-top: 15px;
             a {
                 font-size: 16px;
                 padding: 8px 16px;
@@ -162,6 +185,16 @@
                 border-radius: 8px;
                 gap: 8px;
                 align-items: center;
+
+                .svg_icon{
+                   background-color:  var(--white);
+                }
+                &:hover{
+                    background-color: var(--secondary);
+                    .svg_icon{
+                        background-color: var(--white);
+                    }
+                }
             }
         }
     }
