@@ -8,10 +8,25 @@
     <link rel="stylesheet" href="./assets/fonts/google_icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="assets/styles/app.css">
-    <script src="./assets/js/app.js"></script>
+
+    <script src="./assets/js/app.js" defer></script>
 </head>
 
 <body>
+    <!-- <div x-data="{ open: false }">
+        <div x-data="{ label: 'Robin:' }">
+            <span x-text="label"></span>
+            <span x-show="open">Farid</span>
+        </div>
+        <button @click="open=!open">Click Me</button>
+
+    </div>
+
+    <div x-data="{show:false}">
+        <button @click="show=!show">control alpine</button>
+        <h3 x-show="show">Hello from alpine</h3>
+    </div> -->
+
     <header>
         <nav>
             <div class="container">
@@ -58,64 +73,67 @@
 
                                     <!-- mid section  -->
                                     <div class="mid">
-                                        <div class="cart_item_list">
-                                            <!-- single_cart_item_1  -->
-                                            <div class="single_cart_item">
-                                                <div class="img">
-                                                    <img src="./assets/images/products/cart_img1.png" alt="">
-                                                </div>
-                                                <div class="content">
-                                                    <h3 class="product_name">MackBook Pro M2 MNEJ3 20222 LLA</h3>
-                                                    <h4 class="size">13.3 inch</h4>
-                                                    <h5 class="color">Black</h5>
-                                                    <div class="qty">×1</div>
-                                                    <div class="extra_features">
-                                                        <ul>
-                                                            <li>
-                                                                <div class="svg_icon"
-                                                                    style="-webkit-mask-image: url('assets/images/icons/truck.svg'); mask-image: url('assets/images/icons/truck.svg')">
-                                                                </div>
-                                                                <div class="mid_title">Free Delivery</div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="svg_icon"
-                                                                    style="-webkit-mask-image: url('assets/images/icons/verify.svg'); mask-image: url('assets/images/icons/verify.svg')">
-                                                                </div>
-                                                                <div class="mid_title">Guranteed</div>
-                                                            </li>
-                                                        </ul>
+                                        <!-- use alpine js with template  -->
+                                        <div x-data="{}" class="cart_item_list">
+                                            <template x-for="i in 10">
+                                                <!-- single_cart_item_1  -->
+                                                <div class="single_cart_item">
+                                                    <div class="img">
+                                                        <img src="./assets/images/products/cart_img1.png" alt="">
                                                     </div>
-
-                                                    <div class="qty_changer">
-                                                        <!-- <h3 class="price">$433.00</h3> -->
-                                                        <div class="price">
-                                                            $<span id="price_1" data-price="433.00">433.00</span>
+                                                    <div class="content">
+                                                        <h3 class="product_name">MackBook Pro M2 MNEJ3 20222 LLA</h3>
+                                                        <h4 class="size">13.3 inch</h4>
+                                                        <h5 class="color">Black</h5>
+                                                        <div class="qty">×1</div>
+                                                        <div class="extra_features">
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="svg_icon"
+                                                                        style="-webkit-mask-image: url('assets/images/icons/truck.svg'); mask-image: url('assets/images/icons/truck.svg')">
+                                                                    </div>
+                                                                    <div class="mid_title">Free Delivery</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="svg_icon"
+                                                                        style="-webkit-mask-image: url('assets/images/icons/verify.svg'); mask-image: url('assets/images/icons/verify.svg')">
+                                                                    </div>
+                                                                    <div class="mid_title">Guranteed</div>
+                                                                </li>
+                                                            </ul>
                                                         </div>
-                                                        <div class="qty_updater">
-                                                            <button class="delete_btn">
-                                                                <div class="svg_icon"
-                                                                    style="-webkit-mask-image: url('assets/images/icons/trash.svg'); mask-image: url('assets/images/icons/trash.svg')">
+
+                                                        <div class="qty_changer">
+                                                            <!-- <h3 class="price">$433.00</h3> -->
+                                                            <div class="price">
+                                                                $<span id="price_1" data-price="433.00">433.00</span>
+                                                            </div>
+                                                            <div class="qty_updater">
+                                                                <button class="delete_btn">
+                                                                    <div class="svg_icon"
+                                                                        style="-webkit-mask-image: url('assets/images/icons/trash.svg'); mask-image: url('assets/images/icons/trash.svg')">
+                                                                    </div>
+                                                                </button>
+                                                                <div class="qty_input">
+                                                                    <button onclick="decrementCart('price_1')">
+                                                                        <div class="svg_icon"
+                                                                            style="-webkit-mask-image: url('assets/images/icons/minus.svg'); mask-image: url('assets/images/icons/minus.svg')">
+                                                                        </div>
+                                                                    </button>
+                                                                    <input type="number" value="1" min="1">
+                                                                    <button onclick="incrementCart('price_1')">
+                                                                        <div class="svg_icon"
+                                                                            style="-webkit-mask-image: url('assets/images/icons/add.svg'); mask-image: url('assets/images/icons/add.svg')">
+                                                                        </div>
+                                                                    </button>
                                                                 </div>
-                                                            </button>
-                                                            <div class="qty_input">
-                                                                <button onclick="decrementCart('price_1')">
-                                                                    <div class="svg_icon"
-                                                                        style="-webkit-mask-image: url('assets/images/icons/minus.svg'); mask-image: url('assets/images/icons/minus.svg')">
-                                                                    </div>
-                                                                </button>
-                                                                <input type="number" value="1" min="1">
-                                                                <button onclick="incrementCart('price_1')">
-                                                                    <div class="svg_icon"
-                                                                        style="-webkit-mask-image: url('assets/images/icons/add.svg'); mask-image: url('assets/images/icons/add.svg')">
-                                                                    </div>
-                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </template>
                                             <!-- singlecart-item-list-2 -->
-                                            <div class="single_cart_item">
+                                            <!-- <div class="single_cart_item">
                                                 <div class="img">
                                                     <img src="./assets/images/products/cart_img2.png" alt="">
                                                 </div>
@@ -142,7 +160,7 @@
                                                     </div>
 
                                                     <div class="qty_changer">
-                                                        <!-- <h3 class="price">$433.00</h3> -->
+                                                        
                                                         <div class="price">
                                                             $<span id="price_2" data-price="433.00">433.00</span>
                                                         </div>
@@ -168,9 +186,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- singe-cart-item-list-3  -->
-                                            <div class="single_cart_item">
+                                            <!-- <div class="single_cart_item">
                                                 <div class="img">
                                                     <img src="./assets/images/products/cart_img3.png" alt="">
                                                 </div>
@@ -197,7 +215,7 @@
                                                     </div>
 
                                                     <div class="qty_changer">
-                                                        <!-- <h3 class="price">$433.00</h3> -->
+                                                         
                                                         <div class="price">
                                                             $<span id="price_3" data-price="433.00">433.00</span>
                                                         </div>
@@ -223,7 +241,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
 
@@ -234,7 +252,7 @@
                                             <h4 class="amount">$543.02</h4>
                                         </div>
                                         <div class="right">
-                                            <a href="#">
+                                            <a href="#"> 
                                                 <span>Proceed to Cart</span>
                                                 <div class="svg_icon"
                                                     style="-webkit-mask-image: url('assets/images/icons/shopping-cart.svg'); mask-image: url('assets/images/icons/shopping-cart.svg')">
@@ -480,6 +498,20 @@
             </div>
         </div>
     </section>
+ 
+
+    <section>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(2,1fr);gap: 15px;">
+                <div>
+                    <img src="./assets/images/dummy_products/5.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="./assets/js/plugins/alpine.js" defer></script>
 </body>
 
 </html>

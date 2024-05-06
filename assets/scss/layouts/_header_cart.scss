@@ -10,15 +10,17 @@
     box-shadow: 0px 10px 10px -7px rgba(63, 60, 60, 0.884);
     padding: 16px;
     border-top: 1px solid rgba(79, 79, 217, 0.353);
-//  onclick=system 
+    //  onclick=system 
     display: none;
-    &.active{
+
+    &.active {
         display: block;
     }
 
     // top-section
     .top {
         padding-bottom: 10px;
+
         .cart_top_title {
             font-size: 18px;
             font-weight: 300;
@@ -28,7 +30,7 @@
 
     // mid-section 
     .mid {
-     
+
 
         .cart_item_list {
             height: calc(700px - 252px);
@@ -153,6 +155,7 @@
         gap: 32px;
         align-items: center;
         padding-top: 10px;
+
         .left {
             .title {
                 font-size: 14px;
@@ -171,7 +174,8 @@
 
         .right {
             flex: 1;
-        //    padding-top: 15px;
+
+            //    padding-top: 15px;
             a {
                 font-size: 16px;
                 padding: 8px 16px;
@@ -186,12 +190,14 @@
                 gap: 8px;
                 align-items: center;
 
-                .svg_icon{
-                   background-color:  var(--white);
+                .svg_icon {
+                    background-color: var(--white);
                 }
-                &:hover{
+
+                &:hover {
                     background-color: var(--secondary);
-                    .svg_icon{
+
+                    .svg_icon {
                         background-color: var(--white);
                     }
                 }

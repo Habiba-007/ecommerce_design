@@ -1,3 +1,19 @@
+ 
+var header_cart_products = [
+  {
+    image_no: 1,
+     
+    
+  }
+]
+
+var Product_catagory_list = [
+  {
+    
+  }
+]
+
+
 function decrementCart(price_target) {
   event.preventDefault()
   let input = event.currentTarget.nextElementSibling;
