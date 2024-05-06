@@ -235,6 +235,8 @@ nav .nav_body .action_menu ul li:has(.active) > a .svg_icon {
   opacity: 0;
   transition-duration: 0.3s;
   visibility: hidden;
+  position: fixed;
+  width: 100vh;
   top: 103px;
 }
 #product_catagory_jumbo_menu.active {
