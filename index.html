@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="assets/styles/app.css">
 
-    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/app.js"></script>
 </head>
 
 <body>
-   
+
     <header>
         <nav>
             <div class="container">
@@ -26,7 +26,8 @@
                         <ul>
                             <li><a href="#">home</a></li>
                             <li>
-                                <a href="#" onclick="product_catagory_jumbo_menu.classList.toggle('active')">products</a>
+                                <a href="#"
+                                    onclick="product_catagory_jumbo_menu.classList.toggle('active')">products</a>
                             </li>
                             <li><a href="#">blog</a></li>
                             <li><a href="#">faq</a></li>
@@ -47,10 +48,10 @@
                             <li>
                                 <a href="#" onclick="cart_items.classList.toggle('active')">
                                     <div class="svg_icon"
-                                        style="-webkit-mask-image: url('assets/images/icons/cart.svg'); mask-image: url('assets/images/icons/cart.svg')">
+                                        style="-webkit-mask-image: url('assets/images/icons/cart.svg'); mask-image: url('assets/images/icons/bag.svg')">
                                     </div>
                                 </a>
-                                <!-- another_work_with_cart_section_inside_li  -->
+                                <!-- another_work_with_(cart_section)_inside_li  -->
                                 <div class="cart_items" id="cart_items">
                                     <!-- top section  -->
                                     <div class="top">
@@ -60,16 +61,19 @@
                                     <!-- mid section  -->
                                     <div class="mid">
                                         <!-- use alpine js with template  -->
-                                        <div x-data="{}" class="cart_item_list">
-                                            <template x-for="i in 5">
+                                        <div x-data="{header_cart_products}" class="cart_item_list">
+                                            <template x-for="(i, index) in header_cart_products">
                                                 <!-- single_cart_item_  -->
                                                 <div class="single_cart_item">
                                                     <div class="img">
-                                                        <img src="./assets/images/products/cart_img1.png" alt="">
+                                                        <span x-text="index"></span>
+                                                        <img x-bind:src="`./assets/images/dummy_products/${i.image_no}.jpg`"
+                                                            alt="">
                                                     </div>
                                                     <!-- content part  -->
                                                     <div class="content">
-                                                        <h3 class="product_name">MackBook Pro M2 MNEJ3 20222 LLA</h3>
+                                                        <h3 class="product_name" x-text="i.name">MackBook Pro M2 MNEJ3
+                                                            20222 LLA</h3>
                                                         <h4 class="size">13.3 inch</h4>
                                                         <h5 class="color">Black</h5>
                                                         <div class="qty">×1</div>
@@ -94,7 +98,8 @@
                                                         <div class="qty_changer">
                                                             <!-- <h3 class="price">$433.00</h3> -->
                                                             <div class="price">
-                                                                $<span id="price_1" data-price="433.00">433.00</span>
+                                                                $<span x-bind:id="`price_${index}`"
+                                                                    x-bind:data-price="i.price" x-text="i.price"></span>
                                                             </div>
                                                             <div class="qty_updater">
                                                                 <button class="delete_btn">
@@ -103,13 +108,13 @@
                                                                     </div>
                                                                 </button>
                                                                 <div class="qty_input">
-                                                                    <button onclick="decrementCart('price_1')">
+                                                                    <button @click="decrementCart(`price_${index}`)">
                                                                         <div class="svg_icon"
                                                                             style="-webkit-mask-image: url('assets/images/icons/minus.svg'); mask-image: url('assets/images/icons/minus.svg')">
                                                                         </div>
                                                                     </button>
                                                                     <input type="number" value="1" min="1">
-                                                                    <button onclick="incrementCart('price_1')">
+                                                                    <button @click="incrementCart(`price_${index}`)">
                                                                         <div class="svg_icon"
                                                                             style="-webkit-mask-image: url('assets/images/icons/add.svg'); mask-image: url('assets/images/icons/add.svg')">
                                                                         </div>
@@ -140,14 +145,14 @@
                                     </div>
                                 </div>
                             </li>
-                            <!-- end with cart section  -->
+                            <!-- end with (cart) section  -->
                             <li>
                                 <a href="#" onclick="user_drop_down_action.classList.toggle('active')">
                                     <div class="svg_icon"
                                         style="-webkit-mask-image: url('assets/images/icons/profile.svg'); mask-image: url('assets/images/icons/profile.svg')">
                                     </div>
                                 </a>
-                                <!-- another_drop_down_menu(by user) -->
+                                <!-- another_drop_down_menu(by user) inside_li -->
                                 <div id="user_drop_down_action" class="user_drop_down_action  ">
                                     <ul>
                                         <li>
@@ -233,101 +238,33 @@
                     <div class="product_catagories">
                         <!-- devide-part-1  -->
                         <div class="catagory_list">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Mobile phones</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Laptops & Computers</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Tablets & E-reader</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Wearables</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Audio</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Cameras</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Gaming</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Networking</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="svg_icon"
-                                            style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                        </div>
-                                        <div class="text">Accessories</div>
-                                    </a>
-                                </li>
+                            <ul x-data="{catagory_list}">
+                                <template x-for="catagory in catagory_list">
+                                    <li>
+                                        <a href="#">
+                                            <div class="svg_icon"
+                                                x-bind:style="`-webkit-mask-image: url('assets/images/icons/${catagory.icon}'); mask-image: url('assets/images/icons/${catagory.icon}')`">
+                                            </div>
+                                            <span class="text" x-text="catagory.name"></span>
+                                        </a>
+                                    </li>
+                                </template>
                             </ul>
                         </div>
                         <!-- devide-part-2  -->
                         <div class="subcatagory_list">
                             <div class="subcatagory">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <div class="svg_icon"
-                                                style="-webkit-mask-image: url('assets/images/icons/mobile.svg'); mask-image: url('assets/images/icons/mobile.svg')">
-                                            </div>
-                                            <div class="text">Smart Phones</div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="svg_icon"
-                                                style="-webkit-mask-image: url('assets/images/icons/accessories.svg'); mask-image: url('assets/images/icons/accessories.svg')">
-                                            </div>
-                                            <div class="text">Accessories</div>
-                                        </a>
-                                    </li>
+                                <ul x-data="{subcatagory_list_icon}">
+                                    <template x-for="icon in subcatagory_list_icon">
+                                        <li>
+                                            <a href="#">
+                                                <div class="svg_icon"
+                                                    x-bind:style="`-webkit-mask-image: url('${icon.icon}'); mask-image: url('${icon.icon}')`">
+                                                </div>
+                                                <span class="text" x-text="icon.name"></span>
+                                            </a>
+                                        </li>
+                                    </template>
                                     <li>
                                         <a href="#" class="viewall">
                                             View All
@@ -336,6 +273,7 @@
                                 </ul>
                             </div>
                             <!-- top-products-and top-products-item -->
+                            <!-- top_productss  -->
                             <div class="top_products">
                                 <div class="close_btn">
                                     <a href="#" onclick="product_catagory_jumbo_menu.classList.toggle('active')">
@@ -343,31 +281,17 @@
                                     </a>
                                 </div>
                                 <!-- top_products_items  -->
-                                <div class="top_product_items">
-                                    <div class="product_image">
-                                        <img src="./assets/images/products/img_1.png" alt="product_img">
-                                        <a href="#">
-                                            <h4>Watch & Earpods</h4>
-                                        </a>
-                                    </div>
-                                    <div class="product_image">
-                                        <img src="./assets/images/products/img_2.png" alt="product_img">
-                                        <a href="#">
-                                            <h4>Holders</h4>
-                                        </a>
-                                    </div>
-                                    <div class="product_image">
-                                        <img src="./assets/images/products/img_3.png" alt="product_img">
-                                        <a href="#">
-                                            <h4>Power Cables</h4>
-                                        </a>
-                                    </div>
-                                    <div class="product_image">
-                                        <img src="./assets/images/products/img_4.png" alt="product_img">
-                                        <a href="#">
-                                            <h4>Cases & Protection</h4>
-                                        </a>
-                                    </div>
+                                <div class="top_product_items" x-data="{top_product_items}">
+                                    <template x-for="product_img in top_product_items">
+                                        <div class="product_image">
+                                            <img x-bind:src="`./assets/images/dummy_products/${product_img.image_no}.jpg`"
+                                                alt="">
+                                            <a href="#">
+                                                <h4 x-text="product_img.name"></h4>
+                                            </a>
+                                        </div>
+                                    </template>
+
                                 </div>
                             </div>
                         </div>
@@ -377,8 +301,34 @@
         </div>
     </section>
 
-
-
+<!-- component(search) work with another section part  -->
+<!-- section_part->2  -->
+  
+    <!-- example_section_part  -->
+    <!-- <section x-data="{product_list}">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(5,1fr); gap:10px;">
+                <template x-for="i in 40">
+                    <div>
+                        <img x-bind:src="`./assets/images/dummy_products/${i}.jpg`"  alt="">
+                    </div>
+                </template>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(5,1fr); gap:10px;">
+                <template x-for="i in product_list ">
+                    <div>
+                        <img x-bind:src="`./assets/images/dummy_products/${i.image_no}.jpg`"  alt="">
+                        <h6 x-text="i.name"></h6>
+                        <h6 x-text="i.price"></h6>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section> -->
 
 
     <script src="./assets/js/plugins/alpine.js" defer></script>
