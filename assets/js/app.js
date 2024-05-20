@@ -21,7 +21,7 @@ var header_cart_products = [
 var catagory_list = [
   {
     icon: `mobile.svg`,
-    name:`Mobile phones`,
+    name: `Mobile phones`,
   },
   {
     icon: `monitor.svg`,
@@ -55,17 +55,17 @@ var catagory_list = [
     icon: 'accessories.svg',
     name: `Accessories`
   },
- 
-  
-// `Mobile phones`,
-// `Laptops & Computers`,
-// `Tablets & E-reader`,
-// `Wearables`,
-// `Audio`,
-// `Cameras`,
-// `Gaming`,
-// `Networking`,
-// `Accessories`,
+
+
+  // `Mobile phones`,
+  // `Laptops & Computers`,
+  // `Tablets & E-reader`,
+  // `Wearables`,
+  // `Audio`,
+  // `Cameras`,
+  // `Gaming`,
+  // `Networking`,
+  // `Accessories`,
 ]
 // for_dynamic_with_top_product_items 
 var top_product_items = [
@@ -84,7 +84,19 @@ var top_product_items = [
   {
     image_no: 16,
     name: `Black-Phone`
-  }
+  },
+  {
+    image_no: 16,
+    name: `Black-Phone`
+  },
+  {
+    image_no: 16,
+    name: `Black-Phone`
+  },
+  {
+    image_no: 16,
+    name: `Black-Phone`
+  },
 ]
 // another way to capture image/icon handling 
 var subcatagory_list_icon = [
@@ -142,4 +154,7 @@ function incrementCart(price_target) {
   price.innerText = parseFloat(price.dataset.price) * input.value;
 }
 
+$
+
  
+

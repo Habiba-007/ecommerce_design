@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./assets/fonts/google_icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="assets/styles/app.css">
-
     <script src="./assets/js/app.js"></script>
 </head>
 
@@ -291,7 +290,6 @@
                                             </a>
                                         </div>
                                     </template>
-
                                 </div>
                             </div>
                         </div>
@@ -301,9 +299,97 @@
         </div>
     </section>
 
-<!-- component(search) work with another section part  -->
-<!-- section_part->2  -->
-  
+    <!-- component(search) work with another section part  -->
+    <!-- section_part->2  -->
+    <section id="search_modal">
+        <div class="search_background_overlay">
+            <div class="search_card">
+                <!-- top-section  -->
+                <div class="top">
+                    <form class="search_form" action="#">
+                        <div class="search_input">
+                            <input placeholder="What can we help you to find ?" class="input" type="text">
+                            <button class="submit_btn">
+                                <div class="svg_icon"
+                                    style="-webkit-mask-image: url('assets/images/icons/search.svg'); mask-image: url('assets/images/icons/search.svg')">
+                                </div>
+                            </button>
+                        </div>
+                        <div class="icon_part">
+                            <div class="close">
+                                <div class="svg_icon"
+                                    style="-webkit-mask-image: url('assets/images/icons/close-circle.svg'); mask-image: url('assets/images/icons/close-circle.svg')">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- end-top-part  -->
+                <!-- bottom-section  -->
+                <div class="bottom">
+                    <div class="suggested_keyword">
+                        <!-- whole-keyword-group-part1  -->
+                        <div class="whole_keyword_group">
+                            <h3 class="heading">The Most Searched Items</h3>
+                            <ul class="keyword_list" x-data="{search_keywords}">
+                                <template x-for="mostKeyword in search_keywords">
+                                    <li>
+                                        <a href="#" x-text="mostKeyword"></a>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                        <!-- whole-keyword-group-part-2  -->
+                        <div class="whole_keyword_group">
+                            <h3 class="heading">Most used keywords</h3>
+                            <ul class="keyword_list" x-data="{used_keywords}">
+                                <template x-for="usessKeyword in used_keywords">
+                                    <li>
+                                        <a href="#" x-text="usessKeyword"></a>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>   
+                    
+                    <div class="suggested_search_result">
+                      <div class="left">
+                        <h4 class="search_at_a_glance">view 17 out of 30 results</h4>
+                        <div class="result_list">
+                            <ul x-data="{}">
+                               <template x-for="i in 18">
+                                    <li>
+                                        <a href="#">
+                                            <span x-text="i"></span> iphone <span class="matching_case">case</span>
+                                        </a>
+                                    </li>
+                               </template>
+                            </ul>
+                        </div>
+                      </div>
+                      <div class="right">
+                        <div class="match_products">
+                            <div class="match_product_items" x-data="{top_product_items}">
+                                <template x-for="product_img in top_product_items">
+                                    <div class="product_image">
+                                        <div class="img">
+                                            <img x-bind:src="`./assets/images/dummy_products/${product_img.image_no}.jpg`"   alt="">
+                                        </div>
+                                        <a href="#">
+                                            <h4 class="product_font" x-text="product_img.name"></h4>
+                                        </a>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!-- end-bottom-part  -->
+            </div>
+        </div>
+    </section>
+
     <!-- example_section_part  -->
     <!-- <section x-data="{product_list}">
         <div class="container">
