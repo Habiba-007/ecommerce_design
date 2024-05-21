@@ -154,7 +154,3 @@ function incrementCart(price_target) {
   price.innerText = parseFloat(price.dataset.price) * input.value;
 }
 
-$
-
- 
-

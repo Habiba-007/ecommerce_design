@@ -351,7 +351,7 @@
                             </ul>
                         </div>
                     </div>   
-                    
+                    <!-- suggest-result-part(when someone search show result) -->
                     <div class="suggested_search_result">
                       <div class="left">
                         <h4 class="search_at_a_glance">view 17 out of 30 results</h4>
@@ -373,7 +373,7 @@
                                 <template x-for="product_img in top_product_items">
                                     <div class="product_image">
                                         <div class="img">
-                                            <img x-bind:src="`./assets/images/dummy_products/${product_img.image_no}.jpg`"   alt="">
+                                            <img x-bind:src="`./assets/images/dummy_products/${product_img.image_no}.jpg`"alt="">
                                         </div>
                                         <a href="#">
                                             <h4 class="product_font" x-text="product_img.name"></h4>
