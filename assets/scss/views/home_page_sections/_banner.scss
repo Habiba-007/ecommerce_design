@@ -1,0 +1,29 @@
+#banner {}
+
+.banner_content{
+   display: grid;
+   grid-template-columns: 550px 1fr;
+   .left{
+      .heading{
+         font-size: 64px;
+         // font-weight: 600;
+         // line-height: 70px;
+         color: var(--navy_blue);
+         margin-top: 56px;
+      }
+      .sub_heading{
+         font-size: 32px;
+         // font-weight: 500;
+         // line-height: 35px;
+         color: var(--navy_blue);
+         margin-top: 50px;
+         margin-bottom: 110px;
+         span{
+            color: var(--secondary);
+         }
+      }
+      .banner_btn{
+         padding: 19px 94px;
+      }
+   }
+}

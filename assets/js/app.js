@@ -86,17 +86,14 @@ var top_product_items = [
     name: `Black-Phone`
   },
   {
-    image_no: 16,
+    image_no: 8,
     name: `Black-Phone`
   },
   {
-    image_no: 16,
-    name: `Black-Phone`
+    image_no: 13,
+    name: `Electronic-device`
   },
-  {
-    image_no: 16,
-    name: `Black-Phone`
-  },
+
 ]
 // another way to capture image/icon handling 
 var subcatagory_list_icon = [
@@ -154,3 +151,11 @@ function incrementCart(price_target) {
   price.innerText = parseFloat(price.dataset.price) * input.value;
 }
 
+console.log("something is going wrong")
+const whiteHouse = () => {
+  return `the white house get to punishment to there long sins`
+}
+ 
+ 
+console.log("server is decrement line")
+console.log('somethign is timeout and sever is running at port of 5000 and every server sometimes down to slowly');

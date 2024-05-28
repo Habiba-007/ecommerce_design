@@ -16,6 +16,7 @@
   --secondary: #F45E0C;
   --black: #0C0C0C;
   --white: #FFFFFF;
+  --navy_blue: #042352;
   --brand_deep:#05546D;
   --black_light:#4F4F4F;
   --black_deep:#2D2F30;
@@ -134,12 +135,44 @@ h3 {
   line-height: 32px;
 }
 
+.btn {
+  display: inline-block;
+  padding: 13px 40px;
+  font-size: 15px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  transition-duration: 0.3s;
+}
+.btn.btn_v1 {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+.btn.btn_v1:hover {
+  background-color: var(--primary);
+}
+.btn.btn_v2 {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.btn.btn_v2:hover {
+  background-color: var(--secondary);
+}
+
 #search_modal {
   position: fixed;
   height: 100vh;
   width: 100vw;
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition-duration: 0.3s;
+  transform: scale(0);
+}
+#search_modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 #search_modal .search_background_overlay {
   background-color: rgba(0, 0, 0, 0.2);
@@ -194,11 +227,13 @@ h3 {
   height: 20px;
   width: 19px;
 }
+#search_modal .search_background_overlay .search_card .top .search_form .icon_part .close:hover {
+  background-color: var(--primary);
+}
 #search_modal .search_background_overlay .search_card .bottom .suggested_keyword {
   display: flex;
   flex-wrap: wrap;
   gap: 35px;
-  display: none;
 }
 #search_modal .search_background_overlay .search_card .bottom .suggested_keyword .whole_keyword_group .heading {
   margin-bottom: 40px;
@@ -209,12 +244,12 @@ h3 {
 #search_modal .search_background_overlay .search_card .bottom .suggested_keyword .whole_keyword_group .keyword_list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 32px;
-  row-gap: 32px;
+  column-gap: 35px;
+  row-gap: 25px;
   text-transform: capitalize;
 }
 #search_modal .search_background_overlay .search_card .bottom .suggested_keyword .whole_keyword_group .keyword_list li a {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 300;
   color: var(--black);
 }
@@ -250,25 +285,32 @@ h3 {
   color: #888;
 }
 #search_modal .search_background_overlay .search_card .bottom .suggested_search_result .right {
-  max-width: 500px;
+  width: 500px;
+}
+#search_modal .search_background_overlay .search_card .bottom .suggested_search_result .right .match_products {
+  text-align: center;
 }
 #search_modal .search_background_overlay .search_card .bottom .suggested_search_result .right .match_products .match_product_items {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 #search_modal .search_background_overlay .search_card .bottom .suggested_search_result .right .match_products .match_product_items .product_image {
   box-shadow: -2px 2px 15px -1px rgba(113, 113, 113, 0.1215686275);
   padding: 6px;
 }
 #search_modal .search_background_overlay .search_card .bottom .suggested_search_result .right .match_products .match_product_items .product_image .img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100px;
 }
 #search_modal .search_background_overlay .search_card .bottom .suggested_search_result .right .match_products .match_product_items .product_font {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 18px;
   font-weight: 600;
+  color: var(--black);
+  margin-top: 10px;
+}
+#search_modal .search_background_overlay .search_card .bottom .suggested_search_result .right .match_products .match_product_items .product_font:hover {
+  background-color: var(--primary);
 }
 
 .container {
@@ -689,6 +731,53 @@ nav .nav_body .action_menu ul li:has(.active) > a .svg_icon {
 }
 .cart_items .bottom .right a:hover .svg_icon {
   background-color: var(--white);
+}
+
+.banner_content {
+  display: grid;
+  grid-template-columns: 550px 1fr;
+}
+.banner_content .left .heading {
+  font-size: 64px;
+  color: var(--navy_blue);
+  margin-top: 56px;
+}
+.banner_content .left .sub_heading {
+  font-size: 32px;
+  color: var(--navy_blue);
+  margin-top: 50px;
+  margin-bottom: 110px;
+}
+.banner_content .left .sub_heading span {
+  color: var(--secondary);
+}
+.banner_content .left .banner_btn {
+  padding: 19px 94px;
+}
+
+.banner_catagories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+  gap: 24px;
+  padding: 48px 0px;
+}
+.banner_catagories .item {
+  padding: 8px 18px;
+  box-shadow: -2px 2px 15px -1px rgba(113, 113, 113, 0.1215686275);
+  border-radius: 8px;
+  background-color: var(--white);
+}
+.banner_catagories .item .title h3 {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.banner_sales_part {
+  background-color: var(--navy_blue);
+  display: grid;
+  grid-template-columns: 290 1fr;
+  gap: 15px;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,0 +1,19 @@
+.banner_catagories{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(184px,1fr));
+   gap: 24px;
+   padding: 48px 0px;
+   .item{
+      padding: 8px 18px;
+      box-shadow: -2px 2px 15px -1px #7171711F;
+      border-radius: 8px;
+      background-color: var(--white);
+      .title{
+         h3{
+            font-size: 15px;
+            text-align: center;
+            font-weight: 300;
+         }
+      }
+   }
+}

@@ -14,6 +14,7 @@
 <body>
 
     <header>
+        <!-- its-heading-part-only  -->
         <nav>
             <div class="container">
                 <div class="nav_body">
@@ -37,7 +38,7 @@
                     <div class="action_menu">
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="#" onclick="event.preventDefault(); search_modal.classList.toggle('active')">
                                     <div class="svg_icon"
                                         style="-webkit-mask-image: url('assets/images/icons/search.svg'); mask-image: url('assets/images/icons/search.svg')">
                                     </div>
@@ -303,12 +304,13 @@
     <!-- section_part->2  -->
     <section id="search_modal">
         <div class="search_background_overlay">
-            <div class="search_card">
+            <div class="search_card" x-data="{search_key:``}">
                 <!-- top-section  -->
                 <div class="top">
                     <form class="search_form" action="#">
                         <div class="search_input">
-                            <input placeholder="What can we help you to find ?" class="input" type="text">
+                            <input x-model="search_key" placeholder="What can we help you to find ?" class="input"
+                                type="text">
                             <button class="submit_btn">
                                 <div class="svg_icon"
                                     style="-webkit-mask-image: url('assets/images/icons/search.svg'); mask-image: url('assets/images/icons/search.svg')">
@@ -316,7 +318,8 @@
                             </button>
                         </div>
                         <div class="icon_part">
-                            <div class="close">
+                            <div class="close"
+                                onclick="event.preventDefault(); search_modal.classList.toggle('active')">
                                 <div class="svg_icon"
                                     style="-webkit-mask-image: url('assets/images/icons/close-circle.svg'); mask-image: url('assets/images/icons/close-circle.svg')">
                                 </div>
@@ -324,10 +327,10 @@
                         </div>
                     </form>
                 </div>
-                <!-- end-top-part  -->
+
                 <!-- bottom-section  -->
                 <div class="bottom">
-                    <div class="suggested_keyword">
+                    <div class="suggested_keyword" x-show="search_key.length == 0">
                         <!-- whole-keyword-group-part1  -->
                         <div class="whole_keyword_group">
                             <h3 class="heading">The Most Searched Items</h3>
@@ -350,39 +353,44 @@
                                 </template>
                             </ul>
                         </div>
-                    </div>   
+                    </div>
                     <!-- suggest-result-part(when someone search show result) -->
-                    <div class="suggested_search_result">
-                      <div class="left">
-                        <h4 class="search_at_a_glance">view 17 out of 30 results</h4>
-                        <div class="result_list">
-                            <ul x-data="{}">
-                               <template x-for="i in 18">
-                                    <li>
-                                        <a href="#">
-                                            <span x-text="i"></span> iphone <span class="matching_case">case</span>
-                                        </a>
-                                    </li>
-                               </template>
-                            </ul>
-                        </div>
-                      </div>
-                      <div class="right">
-                        <div class="match_products">
-                            <div class="match_product_items" x-data="{top_product_items}">
-                                <template x-for="product_img in top_product_items">
-                                    <div class="product_image">
-                                        <div class="img">
-                                            <img x-bind:src="`./assets/images/dummy_products/${product_img.image_no}.jpg`"alt="">
-                                        </div>
-                                        <a href="#">
-                                            <h4 class="product_font" x-text="product_img.name"></h4>
-                                        </a>
-                                    </div>
-                                </template>
+                    <div class="suggested_search_result" x-show="search_key.length > 0">
+                        <!-- left-part  -->
+                        <div class="left">
+                            <h4 class="search_at_a_glance">view 17 out of 30 results</h4>
+                            <div class="result_list">
+                                <ul x-data="{}">
+                                    <template x-for="i in 18">
+                                        <li>
+                                            <a href="#">
+                                                <span x-text="i"></span> iphone <span class="matching_case"
+                                                    x-text="search_key"></span>
+                                            </a>
+                                        </li>
+                                    </template>
+                                </ul>
                             </div>
                         </div>
-                      </div>
+                        <!-- rght-part  -->
+                        <div class="right">
+                            <div class="match_products">
+                                <div class="match_product_items" x-data="{top_product_items}">
+                                    <template x-for="product_img in top_product_items">
+                                        <div class="product_image">
+                                            <div class="img">
+                                                <img x-bind:src="`./assets/images/dummy_products/${product_img.image_no}.jpg`"
+                                                    alt="">
+                                            </div>
+                                            <a href="#">
+                                                <h4 x-text="search_key" class="product_font" x-text="product_img.name">
+                                                </h4>
+                                            </a>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- end-bottom-part  -->
@@ -390,32 +398,60 @@
         </div>
     </section>
 
-    <!-- example_section_part  -->
-    <!-- <section x-data="{product_list}">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(5,1fr); gap:10px;">
-                <template x-for="i in 40">
-                    <div>
-                        <img x-bind:src="`./assets/images/dummy_products/${i}.jpg`"  alt="">
-                    </div>
-                </template>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(5,1fr); gap:10px;">
-                <template x-for="i in product_list ">
-                    <div>
-                        <img x-bind:src="`./assets/images/dummy_products/${i.image_no}.jpg`"  alt="">
-                        <h6 x-text="i.name"></h6>
-                        <h6 x-text="i.price"></h6>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section> -->
 
+    <!-- section-part-3  -->
+    <section id="banner">
+        <div class="container">
+            <div class="banner_content">
+                <div class="left">
+                    <h1 class="heading">
+                        Tech Heim
+                    </h1>
+                    <h2 class="sub_heading">
+                        "Join the <span>digital revolution</span> "
+                    </h2>
+                    <a class="btn banner_btn btn_v1" href="#">Explore More</a>
+                </div>
+                <div class="right">
+                    <div class="img">
+                        <img src="./assets/images/banners/1.png.png" alt="banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section-4  -->
+    <section>
+        <div class="container">
+            <div x-data="" class="banner_catagories">
+                <template x-for="i in 6" x-key="i">
+                    <div class="item">
+                        <div class="img">
+                            <img x-bind:src="`./assets/images/products/b_img_${i}.png`" alt="">
+                        </div>
+                        <div class="title">
+                            <h3 x-text=`product${i}`> </h3>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- section_5(banner-sales-part) -->
+    <section>
+        <div class="container">
+            <div class="banner_sales_part">
+                <div class="left">
+                    <h2 class="heading">Products On Sale</h2>
+                    <h3 class="sub_heading">Shop Now</h3>
+                    <a href="#">View all</a>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </section>
 
     <script src="./assets/js/plugins/alpine.js" defer></script>
 </body>
