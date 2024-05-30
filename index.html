@@ -62,13 +62,13 @@
                                     <div class="mid">
                                         <!-- use alpine js with template  -->
                                         <div x-data="{header_cart_products}" class="cart_item_list">
+                                            <!-- use_array_object_here  -->
                                             <template x-for="(i, index) in header_cart_products">
                                                 <!-- single_cart_item_  -->
                                                 <div class="single_cart_item">
                                                     <div class="img">
                                                         <span x-text="index"></span>
-                                                        <img x-bind:src="`./assets/images/dummy_products/${i.image_no}.jpg`"
-                                                            alt="">
+                                                        <img x-bind:src="`./assets/images/dummy_products/${i.image_no}.jpg`"alt="">
                                                     </div>
                                                     <!-- content part  -->
                                                     <div class="content">
@@ -284,8 +284,7 @@
                                 <div class="top_product_items" x-data="{top_product_items}">
                                     <template x-for="product_img in top_product_items">
                                         <div class="product_image">
-                                            <img x-bind:src="`./assets/images/dummy_products/${product_img.image_no}.jpg`"
-                                                alt="">
+                                            <img x-bind:src="`./assets/images/dummy_products/${product_img.image_no}.jpg`"alt="">
                                             <a href="#">
                                                 <h4 x-text="product_img.name"></h4>
                                             </a>
@@ -327,7 +326,6 @@
                         </div>
                     </form>
                 </div>
-
                 <!-- bottom-section  -->
                 <div class="bottom">
                     <div class="suggested_keyword" x-show="search_key.length == 0">
@@ -364,8 +362,7 @@
                                     <template x-for="i in 18">
                                         <li>
                                             <a href="#">
-                                                <span x-text="i"></span> iphone <span class="matching_case"
-                                                    x-text="search_key"></span>
+                                                <span x-text="i"></span> iphone <span class="matching_case" x-text="search_key"></span>
                                             </a>
                                         </li>
                                     </template>
@@ -399,7 +396,7 @@
     </section>
 
 
-    <!-- section-part-3  -->
+    <!-- section-part-3 (display_banner part-start)  -->
     <section id="banner">
         <div class="container">
             <div class="banner_content">
@@ -421,7 +418,7 @@
         </div>
     </section>
 
-    <!-- section-4  -->
+    <!-- section-4 (display_banner_image_catagory) -->
     <section>
         <div class="container">
             <div x-data="" class="banner_catagories">
@@ -446,9 +443,42 @@
                 <div class="left">
                     <h2 class="heading">Products On Sale</h2>
                     <h3 class="sub_heading">Shop Now</h3>
-                    <a href="#">View all</a>
+                   <div>
+                        <a class="link_tag" href="#">
+                           <span>
+                                 View all
+                            </span>
+                            <div class="svg_icon"
+                                style="-webkit-mask-image: url('assets/images/icons/arrow-circle-right.svg'); mask-image: url('assets/images/icons/arrow-circle-right.svg')">
+                            </div>
+                        </a>
+                   </div>
                 </div>
-                <div class="right"></div>
+            <!-- banner_sales_part_right_side  -->
+                <div class="right">
+                    <div x-data="" class="many_product_list">
+                        <template x-for="i in 5" x-key="i">
+                            <div class="many_product_item product_v1">
+                                <div class="img">
+                                    <img x-bind:src="`./assets/images/products/b_sales_${i}.png`" alt="mouse">
+                                </div>
+                                <div class="title">
+                                    <h2>Logitech G502 Gaming Mouse</h2>
+                                </div>
+                                <div class="price_area">
+                                    <div class="delete_price">
+                                        <del>$38</del>
+                                    </div>
+                                    <div class="normal_price">
+                                        $19-
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </template>
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>

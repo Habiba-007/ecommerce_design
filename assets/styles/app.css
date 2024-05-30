@@ -775,9 +775,46 @@ nav .nav_body .action_menu ul li:has(.active) > a .svg_icon {
 
 .banner_sales_part {
   background-color: var(--navy_blue);
+  background-image: url("../images/sales_part/shape_img.png");
+  background-position: -117px -73px;
+  background-size: 323px;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
   display: grid;
-  grid-template-columns: 290 1fr;
-  gap: 15px;
+  grid-template-columns: 290px 1fr;
+  gap: 20px;
+  margin-bottom: 48px;
+  border-radius: 8px;
+}
+.banner_sales_part .left {
+  color: var(--white);
+  text-align: center;
+}
+.banner_sales_part .left .heading {
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: 62px;
+  margin-bottom: 8px;
+}
+.banner_sales_part .left .sub_heading {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 88px;
+}
+.banner_sales_part .left .link_tag {
+  font-size: 16px;
+  color: var(--white);
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 62px;
+}
+.banner_sales_part .left .link_tag .svg_icon {
+  background-color: var(--white);
+}
+.banner_sales_part .right .many_product_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 25px;
 }
 
 /*# sourceMappingURL=app.css.map */
