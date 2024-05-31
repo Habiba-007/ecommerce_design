@@ -313,6 +313,30 @@ h3 {
   background-color: var(--primary);
 }
 
+.many_product_item {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--white);
+}
+.many_product_item .img {
+  margin-bottom: 12px;
+}
+.many_product_item .title {
+  font-size: 12px;
+  line-height: 100%;
+}
+.many_product_item .price_area {
+  display: flex;
+  justify-content: space-between;
+}
+.many_product_item .price_area .delete_price {
+  font-size: 12px;
+  color: #717171;
+}
+.many_product_item .price_area .normal_price {
+  font-size: 14px;
+  color: var(--black);
+}
 .container {
   width: 1400px;
   margin: auto;
