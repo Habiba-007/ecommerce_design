@@ -2,12 +2,31 @@
    padding: 8px;
    border-radius: 8px;
    background-color: var(--white);
+   position: relative;
+   .discount{
+      background-color: #FDDBC9;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      position: absolute;
+      left: 0px;
+      // top: 8px;
+      color: #F45E0C;
+      padding: 6px;
+      font-size: 14px;
+      font-weight: bold;
+   }
    .img{
       margin-bottom: 12px;
+      max-width: 100%;
+      object-fit: contain;
+      height: 214px;
+      object-position: left;
    }
    .title{
-      font-size: 12px;
+      font-size: 14px;
       line-height: 100%;
+      font-weight: 300;
+      margin-bottom: 8px;
    }
    .price_area{
       display: flex;
@@ -19,6 +38,7 @@
       .normal_price{
          font-size: 14px;
          color: var(--black);
+         margin-left: 100px;
       }
    }
    &.product_v1{}

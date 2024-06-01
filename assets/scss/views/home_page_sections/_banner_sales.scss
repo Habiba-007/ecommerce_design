@@ -40,11 +40,24 @@
          
       }
 
-      .right{
+      >.right{
+         // margin-top: 44px;
+         // margin-bottom: 44px;
+         // or
+         padding-top: 44px;
+         padding-right: 5px;
+         // padding-bottom: 44px;
          .many_product_list{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
             gap: 25px;
+         }
+         .navigation{
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
          }
       }
          // some-work-of-right-part-is-transfered-to-component

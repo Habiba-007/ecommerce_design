@@ -151,12 +151,6 @@ function incrementCart(price_target) {
   price.innerText = parseFloat(price.dataset.price) * input.value;
 }
 
-console.log("something is going wrong")
-const whiteHouse = () => {
-  return `the white house get to punishment to there long sins`
-}
  
+
  
-console.log("server is decrement line")
-console.log('somethign is timeout and sever is running at port of 5000 and every server sometimes down to slowly');
-const name = "md bangladesh"

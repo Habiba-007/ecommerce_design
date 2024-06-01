@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "inter-regular";
+  font-family: "interTight-regular";
   src: url("../fonts/inter/interTight-Regular.ttf");
 }
 @font-face {
@@ -317,13 +317,31 @@ h3 {
   padding: 8px;
   border-radius: 8px;
   background-color: var(--white);
+  position: relative;
+}
+.many_product_item .discount {
+  background-color: #FDDBC9;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  position: absolute;
+  left: 0px;
+  color: #F45E0C;
+  padding: 6px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .many_product_item .img {
   margin-bottom: 12px;
+  max-width: 100%;
+  object-fit: contain;
+  height: 214px;
+  object-position: left;
 }
 .many_product_item .title {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 100%;
+  font-weight: 300;
+  margin-bottom: 8px;
 }
 .many_product_item .price_area {
   display: flex;
@@ -336,6 +354,7 @@ h3 {
 .many_product_item .price_area .normal_price {
   font-size: 14px;
   color: var(--black);
+  margin-left: 100px;
 }
 .container {
   width: 1400px;
@@ -835,10 +854,21 @@ nav .nav_body .action_menu ul li:has(.active) > a .svg_icon {
 .banner_sales_part .left .link_tag .svg_icon {
   background-color: var(--white);
 }
-.banner_sales_part .right .many_product_list {
+.banner_sales_part > .right {
+  padding-top: 44px;
+  padding-right: 5px;
+}
+.banner_sales_part > .right .many_product_list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
   gap: 25px;
+}
+.banner_sales_part > .right .navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=app.css.map */
