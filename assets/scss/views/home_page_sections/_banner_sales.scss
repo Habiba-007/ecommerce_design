@@ -46,11 +46,13 @@
          // or
          padding-top: 44px;
          padding-right: 5px;
+         
+         // width: 1000px;
          // padding-bottom: 44px;
          .many_product_list{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(185px, 1000px));
+            
          }
          .navigation{
             display: flex;

@@ -151,6 +151,10 @@ function incrementCart(price_target) {
   price.innerText = parseFloat(price.dataset.price) * input.value;
 }
 
- 
-
+let house_road = (number) => {
+  let road = `road_number ${number}`
+  return road
+}
+let final_result = house_road(254 / 1 / 4)
+console.log(final_result)
  

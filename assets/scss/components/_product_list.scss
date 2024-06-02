@@ -3,6 +3,7 @@
    border-radius: 8px;
    background-color: var(--white);
    position: relative;
+   
    .discount{
       background-color: #FDDBC9;
       border-top-right-radius: 8px;
@@ -17,11 +18,15 @@
    }
    .img{
       margin-bottom: 12px;
-      max-width: 100%;
+      max-width: 50%;
       object-fit: contain;
-      height: 214px;
+      height: 210px;
       object-position: left;
+      
    }
+   // .img_3{
+   //    width: 50%;
+   // }
    .title{
       font-size: 14px;
       line-height: 100%;
@@ -41,5 +46,19 @@
          margin-left: 100px;
       }
    }
-   &.product_v1{}
+   &.product_v1{
+      max-width: 70%;
+   }
+   &.product_v2{
+      max-width: 70%;
+   }
+   &.product_v3{
+      max-width: 70%;
+   }
+   &.product_v4{
+      max-width: 70%;
+   }
+   &.product_v5{
+      max-width: 70%;
+   }
 }
