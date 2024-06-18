@@ -56,7 +56,7 @@ var catagory_list = [
     name: `Accessories`
   },
 
-
+ 
   // `Mobile phones`,
   // `Laptops & Computers`,
   // `Tablets & E-reader`,
@@ -151,6 +151,8 @@ function incrementCart(price_target) {
   price.innerText = parseFloat(price.dataset.price) * input.value;
 }
 
+
+/*
 let house_road = (number) => {
   let road = `road_number ${number}`
   return road
@@ -158,3 +160,41 @@ let house_road = (number) => {
 let final_result = house_road(254 / 1 / 4)
 console.log(final_result)
  
+const house = (num1, num2, num3) => {
+  let houseNo = num1 - num2 - num3;
+  return houseNo;
+}
+houseNo(10, 20, 30);
+console.log(houseNo);
+
+
+let presentTk = 0;
+const sum = (num_1, num_2) => num_1 + num_2;
+
+function bringSome(presentTk = 0, item = 0, price = 0){
+  console.log(`item is-${item} & price is-${price}`)
+  presentTk = (presentTk, price);
+  return presentTk;
+}
+*/
+
+/*
+const theRider = (firsRider, secondRider) => {
+  return  `the rider was ${firsRider}-> the secondRider ${secondRider}`
+}
+let riding = theRider('ami', 'tumi')
+console.log(object);
+
+const check = "400" == 400;
+console.log(check);
+const compare = (bangla, english) => {
+  return `the confort languase was ${bangla} & the cretical languase was ${english}`;
+}
+let checkCompare = compare('bangla is not easy subject', 'other english is not hard subject');
+console.log(checkCompare)
+let banner = (print, picture) => {
+  return `the print was ${print}, the pricture was ${picture}`
+}
+console.log(banner('liftlet,prospectus', 'banner picutre,large banner'));
+console.log("server is crashed in down arrow");
+*/
